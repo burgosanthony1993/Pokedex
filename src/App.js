@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Pokecard from "./Pokecard"
+import pokemon from "./Pokedex"
+import './Pokecard.css'
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+return (
+  <div>
+    <h1 className="pokecard-header">Pokedex</h1>
+  <div className="pokedex-container">
+    {pokemon.map(poke => (
+      <Pokecard
+      key={poke.id} 
+      name={poke.name}
+      img = {poke.id}
+      type = {poke.type}
+      exp = {poke.base_experience}
+    />
+    ))}
+  </div>
+  </div>
+)
 }
 
 export default App;
